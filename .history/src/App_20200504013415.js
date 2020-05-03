@@ -11,10 +11,6 @@ const App = (props)　=> {
     console.log('This is like componentDidMount or componentDidUpdate.')
   },[])
 
-  useEffect(() => {
-    console.log('This callback is for name only.')
-  },[name])
-
   const renderPeriod = () => {
     console.log('renderPeriod renders period.')
     return '。'

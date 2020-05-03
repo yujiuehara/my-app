@@ -8,12 +8,8 @@ const App = (props)　=> {
   }
   
   useEffect(() => {
-    console.log('This is like componentDidMount or componentDidUpdate.')
-  },[])
-
-  useEffect(() => {
-    console.log('This callback is for name only.')
-  },[name])
+    console.log('useEffect is invoked.')
+  })
 
   const renderPeriod = () => {
     console.log('renderPeriod renders period.')
@@ -22,7 +18,7 @@ const App = (props)　=> {
 
   return (
     <>
-      <p>現在の{name}は、{price}円です。}</p>
+      <p>現在の{name}は、{price}円です。</p>
       <button onClick={()=>setState({...state, price: price + 1})}>+1</button>
       <button onClick={()=>setState({...state, price: price - 1})}>-1</button>
       <button onClick={reset}>Reset</button>
