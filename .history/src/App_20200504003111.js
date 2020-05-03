@@ -7,7 +7,6 @@ const App = (props)　=> {
 
   const reset = () => {
     setPrice(props.price)
-    setName(props.name)
   }
 
   return (
