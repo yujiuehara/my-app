@@ -1,27 +1,24 @@
-import React, { useReducer, useState } from 'react'
-
+import React, {useReducer, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Event from './Event'
 import reducer from '../reducers'
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, [])
+  const [state, dispatch] = useReducer(reducer,[])
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
 
-  const addEvent = e => {
+  const addEvent = (e) => {
     e.preventDefault()
-
     dispatch({
-     type: 'CREATE_EVENT',
-     title,
-     body
+      type: 'CREATE_EVENT',
+      title,
+      body
     })
-
     setTitle('')
     setBody('')
   }
+
 
   return (
     <div className="container-fluid">
@@ -47,16 +44,30 @@ const App = () => {
           <tr>
             <th>ID</th>
             <th>タイトル</th>
-            <th>ボディー</th>
+            <th>ボディ</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          {state.map((event, index) => (<Event key={index} event={event} dispatch={dispatch} />))}
+          {state.map((event,index) =>{
+            const id= event.id
+            const handleClickDeleteButton = () => {
+              dispatch({type: 'DELETE_EVENT', id })
+            }
+            
+            return(
+              <tr　key={index}>　
+              <td>{id}</td>
+              <td>{event.title}</td>
+              <td>{event.body}</td>
+              <td><button type="button" className="btn btn-danger" onClick={handleClickDeleteButton}>削除</button></td>
+            </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
