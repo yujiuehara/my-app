@@ -23,21 +23,9 @@ const App = ()=> {
   
   const reset = () => {
     return(
-      setCount(0)
+      setCount(count - count)
     )
   }
-
-  const double = () => {
-    return(
-      setCount(count * 2)
-    )
-  }
-
-  const triple = () => {
-    return(
-      setCount(previousCount =>
-        previousCount % 3 === 0 ? previousCount/3 : previousCount)
-    )}
 
   return (
     <>
@@ -49,10 +37,6 @@ const App = ()=> {
     </div>
     <div>
       <button onClick={reset}>Reset</button>
-    </div>
-    <div>
-      <button onClick={double}>x2</button>
-      <button onClick={triple}>割る３だけ</button>
     </div>
     </>
   );

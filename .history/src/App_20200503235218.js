@@ -35,9 +35,15 @@ const App = ()=> {
 
   const triple = () => {
     return(
-      setCount(previousCount =>
-        previousCount % 3 === 0 ? previousCount/3 : previousCount)
-    )}
+      setCount( previousCount => {
+        if (previousCount % 3 === 0){
+          return previousCount / 3
+        } else{
+          return previousCount
+        }
+      }
+    )
+  }
 
   return (
     <>

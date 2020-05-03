@@ -33,12 +33,6 @@ const App = ()=> {
     )
   }
 
-  const triple = () => {
-    return(
-      setCount(previousCount =>
-        previousCount % 3 === 0 ? previousCount/3 : previousCount)
-    )}
-
   return (
     <>
     <div>count: {count}</div>
@@ -52,7 +46,6 @@ const App = ()=> {
     </div>
     <div>
       <button onClick={double}>x2</button>
-      <button onClick={triple}>割る３だけ</button>
     </div>
     </>
   );
