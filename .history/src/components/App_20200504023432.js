@@ -18,6 +18,7 @@ const App = () => {
 
         <button className="btn btn-primary">イベントを作成する</button>
         <button className="btn btn-danger">全てのイベントを削除する</button>
+        <button className="btn btn-danger">全ての操作ログを削除する</button>
       </form>
       </form>
 
