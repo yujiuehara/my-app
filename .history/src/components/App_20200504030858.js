@@ -26,7 +26,7 @@ const App = () => {
       <form>
         <div className="form-group">
           <label htmlFor="formEventTitle">タイトル</label>
-          <input className="form-control" id="formEventTitle" value={title} onChange={e => setTitle(e.target.value)}/>
+          <input className="form-control" id="formEventTitle" value={title} onChange={e => settitle(e.target.value)}/>
         </div>
 
         <div className="form-group">
