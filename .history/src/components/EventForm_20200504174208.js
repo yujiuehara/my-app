@@ -10,7 +10,7 @@ const EventForm = ({state, dispatch}) => {
       e.preventDefault()
   
       dispatch({
-       type: CREATE_EVENT,
+       type: 'CREATE_EVENT',
        title,
        body
       })
@@ -22,7 +22,7 @@ const EventForm = ({state, dispatch}) => {
     const deleteAllEvents = e => {
       e.preventDefault()
       const result = window.confirm('全てのイベントを本当に削除しても良いですか？')
-      if (result) dispatch({ type: DELETE_ALL_EVENTS })
+      if (result) dispatch({ type: 'DELETE_ALL_EVENTS' })
     }
   
     const unCreatable = title === '' || body === ''
