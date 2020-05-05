@@ -38,7 +38,7 @@ const EventForm = () => {
                 description: '全てのイベントを削除しました',
                 operatedAt: timeCurrentIso8601()
             })
-        }
+        
     }
 
     const unCreatable = title === '' || body === ''

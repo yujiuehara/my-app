@@ -10,37 +10,24 @@ const EventForm = () => {
     const [body, setBody] = useState('')
 
     const addEvent = e => {
-        e.preventDefault()
-
-        dispatch({
-            type: CREATE_EVENT,
-            title,
-            body
-        })
-        
-        dispatch({
-            type: ADD_OPERATION_LOG,
-            description: "イベントを作成しました",
-            operatedAt: timeCurrentIso8601()
-        })
-
-        setTitle('')
-        setBody('')
+      e.preventDefault()
+  
+      dispatch({
+       type: CREATE_EVENT,
+       title,
+       body
+      })
+  
+      setTitle('')
+      setBody('')
     }
-
+  
     const deleteAllEvents = e => {
-        e.preventDefault()
-        const result = window.confirm('全てのイベントを本当に削除しても良いですか？')
-        if (result) {
-            dispatch({ type: DELETE_ALL_EVENTS })
-            dispatch({ 
-                type:ADD_OPERATION_LOG,
-                description: '全てのイベントを削除しました',
-                operatedAt: timeCurrentIso8601()
-            })
-        }
+      e.preventDefault()
+      const result = window.confirm('全てのイベントを本当に削除しても良いですか？')
+      if (result) dispatch({ type: DELETE_ALL_EVENTS })
     }
-
+  
     const unCreatable = title === '' || body === ''
 
     return(
