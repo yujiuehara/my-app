@@ -7,7 +7,7 @@ import Events from './Events'
 import OperationLogs from './OperationLogs'
 import AppContext from '../contexts/AppContext'
 import reducer from '../reducers'
-//import operationLogs from '../reducers/operationLogs'
+
 
 
 const App = () => {
