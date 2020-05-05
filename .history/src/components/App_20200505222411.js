@@ -11,15 +11,16 @@ import reducer from '../reducers'
 
 
 const App = () => {
-  const appState = localStorage.getItem('appWithRedux')
-  const initialState = appState ? JSON.parse(appState) : {
+  const initialState = {
     events: [],
     operationLogs: []
   }
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(()=>{
-    localStorage.setItem('appWithRedux', JSON.stringify(state))
+
+    const string = JSON.stringify(state)
+
   },[state])
 
   return (
